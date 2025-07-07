@@ -1,0 +1,7 @@
+{
+ :docker/base-image "ghcr.io/mishkapp/bsm-base-server-image:v0.0.1"
+ :docker/uri "tcp://localhost:2375"
+ :docker/containers-prefix "bsm-"
+
+ :tg/bot-token "TOKEN"
+ }

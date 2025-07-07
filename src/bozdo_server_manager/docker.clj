@@ -1,13 +1,14 @@
 (ns bozdo-server-manager.docker
   (:require [contajners.core :as c]
+            [config.core :refer [env]]
             )
   (:import (java.io File)))
 
-(def ^{:private true} base-image "ghcr.io/mishkapp/bsm-base-server-image:v0.0.1")
+(def ^{:private true} base-image (:docker/base-image env))
 
-(def ^{:private true} container-prefix "bsm-")
+(def ^{:private true} container-prefix (:docker/containers-prefix env))
 
-(def ^{:private true} docker-conn {:uri "tcp://localhost:2375"})
+(def ^{:private true} docker-conn {:uri (:docker/uri env)})
 
 (def ^{:private true} images
   (c/client {:engine   :docker

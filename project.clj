@@ -11,6 +11,8 @@
                  [com.fzakaria/slf4j-timbre "0.4.1"]
                  [org.clojars.lispyclouds/contajners "1.0.7"]
                  [nl.vv32.rcon/rcon "1.2.0"]
+                 [yogthos/config "1.2.1"]
+                 [io.replikativ/konserve "0.8.321"]
                  ]
   :repl-options {:init-ns bozdo-server-manager.core}
   :jvm-opts ["-Dclojure.tools.logging.factory=clojure.tools.logging.impl/slf4j-factory"]

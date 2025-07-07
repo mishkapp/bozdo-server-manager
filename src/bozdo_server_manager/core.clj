@@ -4,7 +4,9 @@
             [telegrambot-lib.core :as tbot]
             [bozdo-server-manager.fields :as fields]
             [bozdo-server-manager.status :as status]
-            ))
+            [config.core :refer [env]]
+            )
+  (:gen-class))
 
 (defonce users
          (atom {
@@ -111,7 +113,7 @@
   ;(.addShutdownHook (Runtime/getRuntime)
   ;                  (Thread. ^Runnable shutdown-service))
 
-  (let [bozdo-bot (create-bot (System/getenv "TG_BOT_TOKEN"))]
+  (let [bozdo-bot (create-bot (:tg/bot-token env))]
 
     (if (some? (:bot-token bozdo-bot))
       (app bozdo-bot)
