@@ -3,7 +3,7 @@
             )
   (:import (java.io File)))
 
-(def ^{:private true} base-image "rlenferink/minecraft:1.19.1")
+(def ^{:private true} base-image "ghcr.io/mishkapp/bsm-base-server-image:v0.0.1")
 
 (def ^{:private true} container-prefix "bsm-")
 
